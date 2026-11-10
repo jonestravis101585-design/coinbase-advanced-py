@@ -100,7 +100,24 @@ def main():
         action="store_true",
         help="Check Coinbase API access without using OpenAI",
     )
+    parser.add_argument(
+        "--setup",
+        action="store_true",
+        help="Configure API keys locally using a setup wizard",
+    )
+    parser.add_argument("--menu", action="store_true", help="Open the local agent menu")
     args = parser.parse_args()
+    if args.setup:
+        from .setup import run_setup
+
+        if not run_setup():
+            parser.exit(1)
+        return
+    if args.menu:
+        from .setup import run_menu
+
+        run_menu()
+        return
     if args.list_tools:
         for name in sdk_methods():
             if not args.read_only or name in READ_ONLY_METHODS:
@@ -108,7 +125,7 @@ def main():
                     f"{name}: {'read/preview' if name in READ_ONLY_METHODS else 'approval required'}"
                 )
         return
-    load_dotenv(Path(__file__).with_name(".env"))
+    load_dotenv(Path(__file__).with_name(".env"), interpolate=False)
     try:
         client = create_client()
     except Exception:

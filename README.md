@@ -2,6 +2,8 @@
 
 **Coinbase account agent:** See the [interactive agent setup](examples/coinbase_agent/README.md)
 to use this fork's 105 high-level REST tools with approval before account changes.
+For a Windows PC, use the [Windows setup guide](examples/coinbase_agent/WINDOWS.md)
+and the **Start Coinbase Agent.cmd** launcher in this folder.
 
 [![PyPI version](https://badge.fury.io/py/coinbase-advanced-py.svg)](https://badge.fury.io/py/coinbase-advanced-py)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/license/apache-2-0/)

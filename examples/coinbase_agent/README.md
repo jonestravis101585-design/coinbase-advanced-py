@@ -4,6 +4,10 @@ An interactive terminal agent for your Coinbase Advanced Trade account, using th
 OpenAI Agents SDK. It exposes all **105 high-level RESTClient methods** in this
 fork: 63 reads/previews and 42 operations requiring per-call human approval.
 
+**Windows PC:** Follow the [Windows setup guide](WINDOWS.md). The repository's
+**Start Coinbase Agent.cmd** launcher installs the dependencies and opens a
+menu for local key setup, connection checks, read-only chat, and the full agent.
+
 Tools cover accounts and balances, market data, fees, payment-method lookup,
 order previews, placing/editing/cancelling orders, conversions, portfolios and
 the futures/perpetuals methods available through `RESTClient`. An available tool
@@ -52,6 +56,10 @@ The repository is public. Keep `.env` private and store your key JSON outside it
 ## Use the agent
 
 ```bash
+# Open the setup wizard or local menu.
+python -m examples.coinbase_agent --setup
+python -m examples.coinbase_agent --menu
+
 # Full RESTClient tool set; each account change pauses for approval.
 python -m examples.coinbase_agent
 
