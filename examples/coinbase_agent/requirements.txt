@@ -1,0 +1,5 @@
+# Run from the repository root. 0.13.6 supports this SDK's websockets<14 constraint.
+-e .
+openai-agents==0.13.6
+openai==2.26.0
+python-dotenv==1.2.4

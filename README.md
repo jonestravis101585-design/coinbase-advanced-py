@@ -1,4 +1,8 @@
 # Coinbase Advanced API Python SDK
+
+**Coinbase account agent:** See the [interactive agent setup](examples/coinbase_agent/README.md)
+to use this fork's 105 high-level REST tools with approval before account changes.
+
 [![PyPI version](https://badge.fury.io/py/coinbase-advanced-py.svg)](https://badge.fury.io/py/coinbase-advanced-py)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/license/apache-2-0/)
 [![Code Style](https://img.shields.io/badge/code_style-black-black)](https://black.readthedocs.io/en/stable/)

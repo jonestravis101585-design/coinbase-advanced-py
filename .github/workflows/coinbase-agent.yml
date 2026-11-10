@@ -1,0 +1,23 @@
+name: Coinbase Account Agent
+
+on:
+  pull_request:
+  push:
+    branches: [master, codex/coinbase-account-agent]
+
+permissions:
+  contents: read
+
+jobs:
+  offline-agent-tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install -r examples/coinbase_agent/requirements.txt -r test_requirements.txt
+      - run: python -m unittest discover -s examples/coinbase_agent/tests -v
