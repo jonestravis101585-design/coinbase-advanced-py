@@ -36,7 +36,7 @@ class LocalSetupTests(unittest.TestCase):
         ):
             self.assertEqual(
                 setup.validate_key_file(f'"{self.key_file}"', root=self.root),
-                self.key_file,
+                self.key_file.resolve(),
             )
         self.assertEqual(self.key_file.read_bytes(), original)
 
